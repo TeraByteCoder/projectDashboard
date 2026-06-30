@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Project Dashboard</title>
+    <link rel="stylesheet" th:href="@{/css/dashboard.css}" href="/css/dashboard.css">
+    <script defer th:src="@{/js/dashboard.js}" src="/js/dashboard.js"></script>
+</head>
+<body>
+<main class="dashboard-shell">
+    <section class="summary">
+        <div class="title-block">
+            <p class="eyebrow">Linecount Explorer</p>
+            <h1>Project Dashboard</h1>
+        </div>
+        <div class="stats-grid" aria-live="polite">
+            <article class="stat-card">
+                <span>Dateien</span>
+                <strong id="file-count">0</strong>
+            </article>
+            <article class="stat-card">
+                <span>Zeilen</span>
+                <strong id="line-count">0</strong>
+            </article>
+            <article class="stat-card">
+                <span>Groesste Datei</span>
+                <strong id="largest-file">-</strong>
+            </article>
+        </div>
+    </section>
+
+    <section class="toolbar" aria-label="Tree controls">
+        <label class="search-field">
+            <span>Suche</span>
+            <input id="search" type="search" autocomplete="off" placeholder="Datei oder Ordner filtern">
+        </label>
+        <div class="button-row">
+            <button id="expand-all" type="button">Alles aufklappen</button>
+            <button id="collapse-all" type="button">Alles einklappen</button>
+        </div>
+    </section>
+
+    <section class="tree-panel" aria-label="Linecount tree">
+        <div class="panel-header">
+            <span>Pfad</span>
+            <span>Anteil im Ordner</span>
+            <span>Zeilen</span>
+        </div>
+        <div id="tree" class="tree" aria-live="polite">
+            <div class="loading">Lade Dateien...</div>
+        </div>
+    </section>
+</main>
+</body>
+</html>
